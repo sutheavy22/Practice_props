@@ -12,12 +12,12 @@ export const myData = {
   title: "PN Trainer",
 };
 
-// TODO Edit the User component code to be able to display DIFFERENT users !
-export function User() {
+// Update the User component to receive props
+export function User({ firstName, lastName, title }) {
   return (
     <div id="user" data-testid="user">
-      <h2>TODO: FIRST NAME LAST NAME</h2>
-      <p>TODO: TITLE</p>
+      <h2>{firstName} {lastName}</h2>
+      <p>{title}</p>
     </div>
   );
 }
@@ -27,8 +27,9 @@ function App() {
     <div id="app">
       <h1>PNV React Team !!</h1>
       <p>Here are some PNV React masters, do you know them?</p>
-      <User /> {/* This line needs some changes*/}
-      <User /> {/* This line needs some changes*/}
+      {/* Pass different user data as props */}
+      <User firstName={vinhData.firstName} lastName={vinhData.lastName} title={vinhData.title} />
+      <User firstName={myData.firstName} lastName={myData.lastName} title={myData.title} />
     </div>
   );
 }
